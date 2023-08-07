@@ -11,5 +11,22 @@ namespace ClassJournal.API.DatabaseContext
         {
         
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<TrainerModel>().HasData(
+                new TrainerModel()
+                { 
+                    Id = 1,
+                    Name = "NameTest1",
+                    Surname = "SurnameTest1",
+                },
+                new TrainerModel()
+                {
+                    Id = 2,
+                    Name = "NameTest2",
+                    Surname = "SurnameTest2",
+                });
+        }
     }
 }
