@@ -1,4 +1,5 @@
 using ClassJournal.API.DatabaseContext;
+using ClassJournal.API.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ builder.Services.AddCors(options =>
         .AllowAnyMethod()
         .AllowAnyHeader());
 });
+DependencyInjectionsConfig.ConfigureServices(builder.Services);
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
