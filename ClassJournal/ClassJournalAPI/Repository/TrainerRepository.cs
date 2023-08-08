@@ -36,7 +36,6 @@ namespace ClassJournal.API.Repository
 
         public void Update(TrainerModel dbEntity, TrainerModel entity)
         {
-            dbEntity.Id = entity.Id;
             dbEntity.Name = entity.Name;
             dbEntity.Surname = entity.Surname;
 
