@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<TrainerContext>(context =>
+builder.Services.AddDbContext<UserContext>(context =>
 {
     context.UseSqlServer(builder.Configuration.GetConnectionString("ClassJournalDB"));
 });

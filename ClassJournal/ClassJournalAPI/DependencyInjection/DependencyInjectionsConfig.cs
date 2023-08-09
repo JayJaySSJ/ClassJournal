@@ -10,7 +10,8 @@ namespace ClassJournal.API.DependencyInjection
         public static void ConfigureServices(IServiceCollection services)
         {
             services//.AddScoped<IConnectionFactory, ConnectionFactory>()     //TODO: Double-check to use or drop this step!!
-                .AddScoped<IClassJournalRepository<TrainerModel>, TrainerRepository>();
+                .AddScoped<IClassJournalRepository<UserModel>, UserRepository>()
+                .AddScoped<IClassJournalRepository<ClassModel>, ClassRepository>();
         }
     }
 }
