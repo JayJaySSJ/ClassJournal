@@ -7,7 +7,7 @@ namespace ClassJournal.API.DatabaseContext
     {
         public DbSet<UserModel> Users { get; set; }
 
-        public UserContext(DbContextOptions contextOptions) : base(contextOptions)
+        public UserContext(DbContextOptions<UserContext> contextOptions) : base(contextOptions)
         {
         
         }
@@ -23,7 +23,7 @@ namespace ClassJournal.API.DatabaseContext
                     Email = "admin" + "@" + "admin.com",
                     Password = "admin",
                     BirthDate = new DateTime(1973, 01, 01),
-                    UserFunction = UserFunctionEnum.Admin
+                    Function = UserFunctionEnum.Admin
                 });
         }
     }

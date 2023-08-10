@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ClassJournal.API.Models
 {
+    [Table("Classes")]
     public class ClassModel
     {
         [Key]
@@ -13,18 +15,18 @@ namespace ClassJournal.API.Models
             get { return Trainer; } 
             set 
             {
-                if (value is not null && value.UserFunction == UserFunctionEnum.Trainer)
+                if (value is not null && value.Function == UserFunctionEnum.Trainer)
                 {
                     Trainer = value;
                 }
             }
         }
-        public IEnumerable<UserModel> Students
+        public IEnumerable<UserModel> Students  //DOTO: 'value.Any()' to double-check in use
         { 
             get { return Students; }
             set
             {
-                if (value is not null && value.All(x => x.UserFunction == UserFunctionEnum.Student))
+                if (value is not null && value.Any() && value.All(x => x.Function == UserFunctionEnum.Student))
                 {
                     Students = value;
                 }    
