@@ -31,7 +31,7 @@ namespace ClassJournal.API.Repository
 
         public IEnumerable<UserModel> GetAll()
         {
-            return _userContext.Users.Where(x => x.UserFunction != UserFunctionEnum.Admin).ToList();
+            return _userContext.Users.Where(x => x.Function != UserFunctionEnum.Admin).ToList();
         }
 
         public void Update(UserModel dbEntity, UserModel entity)

@@ -13,6 +13,6 @@ namespace ClassJournal.API.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public DateTime BirthDate { get; set; }
-        public UserFunctionEnum UserFunction { get; set; }
+        public UserFunctionEnum Function { get; set; }
     }
 }

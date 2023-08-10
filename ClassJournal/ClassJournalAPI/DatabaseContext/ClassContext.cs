@@ -7,7 +7,7 @@ namespace ClassJournal.API.DatabaseContext
     {
         public DbSet<ClassModel> Classes { get; set; }
 
-        public ClassContext(DbContextOptions contextOptions) : base(contextOptions) 
+        public ClassContext(DbContextOptions<ClassContext> contextOptions) : base(contextOptions) 
         {
         
         }
