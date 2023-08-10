@@ -6,69 +6,69 @@ namespace ClassJournalAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class TrainerController : ControllerBase
+    public class UserController : ControllerBase
     {
-        private readonly IClassJournalRepository<TrainerModel> _classJournalRepository;
+        private readonly IClassJournalRepository<UserModel> _classJournalRepository;
 
-        public TrainerController(IClassJournalRepository<TrainerModel> classJournalRepository)
+        public UserController(IClassJournalRepository<UserModel> classJournalRepository)
         {
             _classJournalRepository = classJournalRepository;
         }
 
-        // GET: api/Trainer
+        // GET: api/User
         [HttpGet]
         public IActionResult Get()
         {
-            IEnumerable<TrainerModel> trainers = _classJournalRepository.GetAll();
-            return Ok(trainers);
+            IEnumerable<UserModel> users = _classJournalRepository.GetAll();
+            return Ok(users);
         }
 
-        // GET: api/Trainer/7
+        // GET: api/User/7
         [HttpGet("{id}", Name = "Get")]
         public IActionResult Get(int id)
         {
-            TrainerModel trainer = _classJournalRepository.Get(id);
+            UserModel user = _classJournalRepository.Get(id);
 
-            if (trainer == null)
+            if (user == null)
             {
                 return NotFound("No such record in database");
             }
 
-            return Ok(trainer);
+            return Ok(user);
         }
 
-        // POST: api/Trainer
+        // POST: api/User
         [HttpPost]
-        public IActionResult Post([FromBody] TrainerModel trainer)
+        public IActionResult Post([FromBody] UserModel user)
         {
-            if (trainer == null)
+            if (user == null)
             {
                 return BadRequest("Missing data");
             }
 
-            _classJournalRepository.Add(trainer);
+            _classJournalRepository.Add(user);
             return CreatedAtRoute(
                 "GET",
-                new { Id = trainer.Id },
-                trainer);
+                new { Id = user.Id },
+                user);
         }
 
-        // PUT: api/Trainer/7
+        // PUT: api/User/7
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] TrainerModel trainer)
+        public IActionResult Put(int id, [FromBody] UserModel user)
         {
-            if (trainer == null)
+            if (user == null)
             {
                 return BadRequest("Missing data");
             }    
 
-            TrainerModel recordToUpdate = _classJournalRepository.Get(id);
+            UserModel recordToUpdate = _classJournalRepository.Get(id);
             if (recordToUpdate == null)
             {
                 return NotFound("No such record in database");
             }
 
-            _classJournalRepository.Update(recordToUpdate, trainer);
+            _classJournalRepository.Update(recordToUpdate, user);
             return NoContent();
         }
 
@@ -76,13 +76,13 @@ namespace ClassJournalAPI.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            TrainerModel trainer = _classJournalRepository.Get(id);
-            if (trainer == null)
+            UserModel user = _classJournalRepository.Get(id);
+            if (user == null)
             {
                 return NotFound("No such record in database");
             }
 
-            _classJournalRepository.Delete(trainer);
+            _classJournalRepository.Delete(user);
             return NoContent();
         }
     }

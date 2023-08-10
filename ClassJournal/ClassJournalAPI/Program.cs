@@ -1,13 +1,9 @@
 using ClassJournal.API.DatabaseContext;
 using ClassJournal.API.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<TrainerContext>(context =>
-{
-    context.UseSqlServer(builder.Configuration.GetConnectionString("ClassJournalDB"));
-});
+DatabaseContextConfig.ConfigureDbContext(builder);
 
 builder.Services.AddCors(options =>
 {
