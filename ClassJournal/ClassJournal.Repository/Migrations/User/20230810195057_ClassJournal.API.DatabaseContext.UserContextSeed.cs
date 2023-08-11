@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace ClassJournal.API.Migrations.User
+namespace ClassJournal.Repository.Migrations.User
 {
     /// <inheritdoc />
-    public partial class ClassJournalAPIDatabaseContextUserContextSeed : Migration
+    public partial class ClassJournalRepositoryDatabaseContextUserContextSeed : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

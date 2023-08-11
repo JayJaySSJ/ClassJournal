@@ -1,7 +1,7 @@
 ﻿using ClassJournal.API.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ClassJournal.API.DatabaseContext
+namespace ClassJournal.Repository.DatabaseContext
 {
     public class ClassContext : DbContext
     {
