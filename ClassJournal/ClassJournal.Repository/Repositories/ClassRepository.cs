@@ -1,6 +1,7 @@
 ﻿using ClassJournal.API.Models;
+using ClassJournal.API.RepositoryDependencies;
 
-namespace ClassJournal.API.Repository
+namespace ClassJournal.Repository.Repositories
 {
     public class ClassRepository : IClassJournalRepository<ClassModel>
     {

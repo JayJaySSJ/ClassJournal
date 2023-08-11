@@ -1,7 +1,8 @@
-﻿using ClassJournal.API.DatabaseContext;
+﻿using ClassJournal.Repository.DatabaseContext;
 using ClassJournal.API.Models;
+using ClassJournal.API.RepositoryDependencies;
 
-namespace ClassJournal.API.Repository
+namespace ClassJournal.Repository.Repositories
 {
     public class UserRepository : IClassJournalRepository<UserModel>
     {

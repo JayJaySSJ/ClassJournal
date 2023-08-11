@@ -1,5 +1,5 @@
 using ClassJournal.API.Models;
-using ClassJournal.API.Repository;
+using ClassJournal.API.RepositoryDependencies;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClassJournalAPI.Controllers

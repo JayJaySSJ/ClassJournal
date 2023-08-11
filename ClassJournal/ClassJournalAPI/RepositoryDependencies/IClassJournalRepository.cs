@@ -1,4 +1,4 @@
-﻿namespace ClassJournal.API.Repository
+﻿namespace ClassJournal.API.RepositoryDependencies
 {
     public interface IClassJournalRepository<TEntity>
     {
