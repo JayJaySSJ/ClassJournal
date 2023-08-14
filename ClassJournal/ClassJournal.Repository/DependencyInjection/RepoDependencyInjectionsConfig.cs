@@ -1,11 +1,13 @@
-﻿using ClassJournal.API.Models;
-using ClassJournal.API.Repository;
+﻿using ClassJournal.AppCore.Models;
+using ClassJournal.AppCore.RepositoryDependencies;
+using ClassJournal.Repository.Repositories;
+using Microsoft.Extensions.DependencyInjection;
 //using RabbitMQ.Client;
 //using IConnectionFactory = RabbitMQ.Client.IConnectionFactory;
 
-namespace ClassJournal.API.DependencyInjection
+namespace ClassJournal.Repository.DependencyInjection
 {
-    class DependencyInjectionsConfig
+    public class RepoDependencyInjectionsConfig
     {
         public static void ConfigureServices(IServiceCollection services)
         {

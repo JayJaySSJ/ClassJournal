@@ -1,8 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace ClassJournal.API.DatabaseContext
+namespace ClassJournal.Repository.DatabaseContext
 {
-    class DatabaseContextConfig
+    public class DatabaseContextConfig
     {
         public static void ConfigureDbContext(WebApplicationBuilder builder)
         {

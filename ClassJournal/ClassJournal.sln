@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassJournal.API", "ClassJournalAPI\ClassJournal.API.csproj", "{45319D88-C4D7-44CA-ACA3-E878E1CA3567}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassJournal.API", "ClassJournalAPI\ClassJournal.API.csproj", "{45319D88-C4D7-44CA-ACA3-E878E1CA3567}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdministratorPanel.MVC", "AdministratorPanelMVC\AdministratorPanel.MVC.csproj", "{E16DE20E-4906-4B77-A5B1-3F227BB86F8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdministratorPanel.MVC", "AdministratorPanelMVC\AdministratorPanel.MVC.csproj", "{E16DE20E-4906-4B77-A5B1-3F227BB86F8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassJournal.Repository", "ClassJournal.Repository\ClassJournal.Repository.csproj", "{B404F12B-B871-410A-BFA8-84192C163EA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassJournal.Repository", "ClassJournal.Repository\ClassJournal.Repository.csproj", "{B404F12B-B871-410A-BFA8-84192C163EA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassJournal.AppCore", "ClassJournal.AppCore\ClassJournal.AppCore.csproj", "{A36CD689-F903-4252-B22C-52845D00D203}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{B404F12B-B871-410A-BFA8-84192C163EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B404F12B-B871-410A-BFA8-84192C163EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B404F12B-B871-410A-BFA8-84192C163EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A36CD689-F903-4252-B22C-52845D00D203}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A36CD689-F903-4252-B22C-52845D00D203}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A36CD689-F903-4252-B22C-52845D00D203}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A36CD689-F903-4252-B22C-52845D00D203}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
