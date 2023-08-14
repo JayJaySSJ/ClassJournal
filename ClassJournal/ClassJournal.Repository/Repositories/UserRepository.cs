@@ -1,6 +1,6 @@
 ﻿using ClassJournal.Repository.DatabaseContext;
-using ClassJournal.API.Models;
-using ClassJournal.API.RepositoryDependencies;
+using ClassJournal.AppCore.Models;
+using ClassJournal.AppCore.RepositoryDependencies;
 
 namespace ClassJournal.Repository.Repositories
 {

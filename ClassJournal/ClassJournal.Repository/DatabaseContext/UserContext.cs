@@ -1,4 +1,4 @@
-﻿using ClassJournal.API.Models;
+﻿using ClassJournal.AppCore.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ClassJournal.Repository.DatabaseContext

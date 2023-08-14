@@ -4,7 +4,7 @@ using ClassJournal.Repository.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 
 DatabaseContextConfig.ConfigureDbContext(builder);
-DependencyInjectionsConfig.ConfigureServices(builder.Services);
+RepoDependencyInjectionsConfig.ConfigureServices(builder.Services);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

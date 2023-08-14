@@ -1,33 +1,33 @@
-using ClassJournal.API.Models;
-using ClassJournal.API.RepositoryDependencies;
+using ClassJournal.AppCore.Models;
 using Microsoft.AspNetCore.Mvc;
+using ClassJournal.AppCore.Interfaces;
 
-namespace ClassJournalAPI.Controllers
+namespace ClassJournalAPI.ApiControllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
-        private readonly IClassJournalRepository<UserModel> _classJournalRepository;
+        private readonly IUserService _userService;
 
-        public UserController(IClassJournalRepository<UserModel> classJournalRepository)
+        public UserController(IUserService classService)
         {
-            _classJournalRepository = classJournalRepository;
+            _userService = classService;
         }
 
         // GET: api/User
         [HttpGet]
         public IActionResult Get()
         {
-            IEnumerable<UserModel> users = _classJournalRepository.GetAll();
+            IEnumerable<UserModel> users = _userService.GetAll();
             return Ok(users);
         }
 
         // GET: api/User/7
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "GetUserById")]
         public IActionResult Get(int id)
         {
-            UserModel user = _classJournalRepository.Get(id);
+            UserModel user = _userService.Get(id);
 
             if (user == null)
             {
@@ -46,9 +46,9 @@ namespace ClassJournalAPI.Controllers
                 return BadRequest("Missing data");
             }
 
-            _classJournalRepository.Add(user);
+            _userService.Add(user);
             return CreatedAtRoute(
-                "GET",
+                "GetUserById",
                 new { Id = user.Id },
                 user);
         }
@@ -62,13 +62,13 @@ namespace ClassJournalAPI.Controllers
                 return BadRequest("Missing data");
             }    
 
-            UserModel recordToUpdate = _classJournalRepository.Get(id);
+            UserModel recordToUpdate = _userService.Get(id);
             if (recordToUpdate == null)
             {
                 return NotFound("No such record in database");
             }
 
-            _classJournalRepository.Update(recordToUpdate, user);
+            _userService.Update(recordToUpdate, user);
             return NoContent();
         }
 
@@ -76,13 +76,13 @@ namespace ClassJournalAPI.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            UserModel user = _classJournalRepository.Get(id);
+            UserModel user = _userService.Get(id);
             if (user == null)
             {
                 return NotFound("No such record in database");
             }
 
-            _classJournalRepository.Delete(user);
+            _userService.Delete(user);
             return NoContent();
         }
     }

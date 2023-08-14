@@ -21,4 +21,9 @@
     <Folder Include="DependencyInjection\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ClassJournal.AppCore\ClassJournal.AppCore.csproj" />
+    <ProjectReference Include="..\ClassJournal.Repository\ClassJournal.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

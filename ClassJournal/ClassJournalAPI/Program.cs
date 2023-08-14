@@ -1,7 +1,10 @@
+using ClassJournal.AppCore.DependencyInjection;
+using ClassJournal.Repository.DatabaseContext;
+using ClassJournal.Repository.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//DatabaseContextConfig.ConfigureDbContext(builder);
+DatabaseContextConfig.ConfigureDbContext(builder);
 
 builder.Services.AddCors(options =>
 {
@@ -10,7 +13,8 @@ builder.Services.AddCors(options =>
         .AllowAnyMethod()
         .AllowAnyHeader());
 });
-//DependencyInjectionsConfig.ConfigureServices(builder.Services);
+AppCoreDependencyInjectionsConfig.ConfigureServices(builder.Services);
+RepoDependencyInjectionsConfig.ConfigureServices(builder.Services);
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();

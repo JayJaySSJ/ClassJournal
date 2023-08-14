@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ClassJournal.API.Models
+namespace ClassJournal.AppCore.Models
 {
     [Table("Classes")]
     public class ClassModel

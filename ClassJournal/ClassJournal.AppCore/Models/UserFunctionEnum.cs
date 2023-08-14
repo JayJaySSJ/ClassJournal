@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace ClassJournal.API.Models
+namespace ClassJournal.AppCore.Models
 {
     public enum UserFunctionEnum
     {
