@@ -1,0 +1,30 @@
+﻿body {
+
+}
+
+#nav-btn {
+    background-color: #a0d1b6;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    border-radius: 12px;
+}
+
+    #nav-btn:hover {
+        background-color: #67ab05;
+        outline-color: transparent;
+        outline-style: solid;
+        box-shadow: 0 0 0 4px #a0d1b6;
+    }
+
+@media (max-height:1500px) and (min-height:700px) {
+    .def-padd {
+        padding-top: calc(50px + (100vw - 700px) * (50 - 100) / (700 -  1000));
+        padding-bottom: calc(50px + (100vw - 700px) * (50 - 100) / (700 -  1000));
+    }
+}
