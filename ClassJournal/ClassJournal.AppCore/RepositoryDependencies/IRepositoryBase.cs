@@ -1,6 +1,6 @@
 ﻿namespace ClassJournal.AppCore.RepositoryDependencies
 {
-    public interface IClassJournalRepository<TEntity>
+    public interface IRepositoryBase<TEntity>
     {
         IEnumerable<TEntity> GetAll();
         TEntity Get(int id);

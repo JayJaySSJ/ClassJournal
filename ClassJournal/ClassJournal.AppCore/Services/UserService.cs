@@ -6,36 +6,43 @@ namespace ClassJournal.AppCore.Services
 {
     public class UserService : IUserService
     {
-        private readonly IClassJournalRepository<UserModel> _classJournalRepository;
+        private readonly IRepositoryBase<UserModel> _repositoryBase;
+        private readonly IUserRepository _userRepository;
 
-        public UserService(IClassJournalRepository<UserModel> classJournalRepository)
+        public UserService(IRepositoryBase<UserModel> classJournalRepository, IUserRepository userRepository)
         {
-            _classJournalRepository = classJournalRepository;
+            _repositoryBase = classJournalRepository;
+            _userRepository = userRepository;
         }
 
         public void Add(UserModel entity)
         {
-            _classJournalRepository.Add(entity);
+            _repositoryBase.Add(entity);
         }
 
         public void Delete(UserModel entity)
         {
-            _classJournalRepository.Delete(entity);
+            _repositoryBase.Delete(entity);
         }
 
         public UserModel Get(int id)
         {
-            return _classJournalRepository.Get(id);
+            return _repositoryBase.Get(id);
+        }
+
+        public UserModel Get(string email)
+        {
+            return _userRepository.Get(email);
         }
 
         public IEnumerable<UserModel> GetAll()
         {
-            return _classJournalRepository.GetAll();
+            return _repositoryBase.GetAll();
         }
 
         public void Update(UserModel dbEntity, UserModel entity)
         {
-            _classJournalRepository.Update(dbEntity, entity);
+            _repositoryBase.Update(dbEntity, entity);
         }
     }
 }

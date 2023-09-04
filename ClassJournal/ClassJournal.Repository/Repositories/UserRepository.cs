@@ -4,7 +4,7 @@ using ClassJournal.AppCore.RepositoryDependencies;
 
 namespace ClassJournal.Repository.Repositories
 {
-    public class UserRepository : IClassJournalRepository<UserModel>
+    public class UserRepository : IUserRepository
     {
         private readonly UserContext _userContext;
 
@@ -28,6 +28,11 @@ namespace ClassJournal.Repository.Repositories
         public UserModel Get(int id)
         {
             return _userContext.Users.FirstOrDefault(x => x.Id == id);
+        }
+
+        public UserModel Get(string email)
+        {
+            return _userContext.Users.FirstOrDefault(x => x.Email == email);
         }
 
         public IEnumerable<UserModel> GetAll()

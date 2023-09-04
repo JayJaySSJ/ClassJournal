@@ -6,9 +6,9 @@ namespace ClassJournal.AppCore.Services
 {
     public class ClassService : IClassService
     {
-        private readonly IClassJournalRepository<ClassModel> _classJournalRepository;
+        private readonly IRepositoryBase<ClassModel> _classJournalRepository;
 
-        public ClassService(IClassJournalRepository<ClassModel> classJournalRepository)
+        public ClassService(IRepositoryBase<ClassModel> classJournalRepository)
         {
             _classJournalRepository = classJournalRepository;
         }

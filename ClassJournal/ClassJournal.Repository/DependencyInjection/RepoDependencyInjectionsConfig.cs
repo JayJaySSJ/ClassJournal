@@ -12,8 +12,10 @@ namespace ClassJournal.Repository.DependencyInjection
         public static void ConfigureServices(IServiceCollection services)
         {
             services//.AddScoped<IConnectionFactory, ConnectionFactory>()     //TODO: Double-check to use or drop this step!!
-                .AddScoped<IClassJournalRepository<UserModel>, UserRepository>()
-                .AddScoped<IClassJournalRepository<ClassModel>, ClassRepository>();
+                .AddScoped<IRepositoryBase<UserModel>, UserRepository>()
+                .AddScoped<IRepositoryBase<ClassModel>, ClassRepository>()
+                .AddScoped<IUserRepository, UserRepository>()
+                .AddScoped<IClassRepository, ClassRepository>();
         }
     }
 }
