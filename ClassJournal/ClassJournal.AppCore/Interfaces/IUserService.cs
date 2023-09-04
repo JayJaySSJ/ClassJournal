@@ -6,6 +6,7 @@ namespace ClassJournal.AppCore.Interfaces
     {
         IEnumerable<UserModel> GetAll();
         UserModel Get(int id);
+        UserModel Get(string email);
         void Add(UserModel entity);
         void Update(UserModel dbEntity, UserModel entity);
         void Delete(UserModel entity);

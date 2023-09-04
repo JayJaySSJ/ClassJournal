@@ -4,7 +4,7 @@ using ClassJournal.Repository.DatabaseContext;
 
 namespace ClassJournal.Repository.Repositories
 {
-    public class ClassRepository : IClassJournalRepository<ClassModel>
+    public class ClassRepository : IClassRepository
     {
         private readonly ClassContext _classContext;
 

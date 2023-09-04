@@ -1,9 +1,11 @@
+using ClassJournal.AppCore.DependencyInjection;
 using ClassJournal.Repository.DatabaseContext;
 using ClassJournal.Repository.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 DatabaseContextConfig.ConfigureDbContext(builder);
+AppCoreDependencyInjectionsConfig.ConfigureServices(builder.Services);
 RepoDependencyInjectionsConfig.ConfigureServices(builder.Services);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
